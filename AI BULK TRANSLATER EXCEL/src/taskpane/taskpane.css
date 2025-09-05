@@ -1,0 +1,266 @@
+/*
+ * AI Translator for Excel - Stylesheet
+ * Design: Google Material Design
+ * Version: 1.0.0
+ */
+
+/* --- THEME & COLOR VARIABLES --- */
+:root {
+    --font-family: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    
+    /* Light Theme Palette */
+    --background-light: #f8f9fa;
+    --text-light-primary: #202124;
+    --text-light-secondary: #5f6368;
+    --border-light: #dadce0;
+    --accent-light: #1a73e8;
+    --accent-hover-light: #185abc;
+    --surface-light: #ffffff;
+
+    /* Dark Theme Palette */
+    --background-dark: #202124;
+    --text-dark-primary: #e8eaed;
+    --text-dark-secondary: #9aa0a6;
+    --border-dark: #3c4043;
+    --accent-dark: #8ab4f8;
+    --accent-hover-dark: #a6c9fa;
+    --surface-dark: #2d2e30;
+}
+
+/* --- GENERAL & LAYOUT STYLES --- */
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    box-sizing: border-box;
+    background-color: var(--background-light);
+    color: var(--text-light-primary);
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.container {
+    padding: 16px;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+h1 {
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--text-light-primary);
+    margin: 0;
+}
+
+h2 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-light-primary);
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 8px;
+    margin-top: 24px;
+}
+
+p, label {
+    margin: 8px 0;
+    color: var(--text-light-secondary);
+}
+
+label {
+    font-weight: 500;
+    display: block;
+    margin-top: 16px;
+    color: var(--text-light-primary);
+}
+
+/* --- FORM ELEMENTS --- */
+input[type="password"], select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    box-sizing: border-box;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    background-color: var(--surface-light);
+    color: var(--text-light-primary);
+    font-size: 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input[type="password"]:focus, select:focus {
+    outline: none;
+    border-color: var(--accent-light);
+    box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2);
+}
+
+/* --- BUTTONS --- */
+.button {
+    width: 100%;
+    margin-top: 16px;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid transparent;
+    transition: background-color 0.2s, box-shadow 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.button:disabled {
+    background-color: #f1f3f4;
+    color: #9aa0a6;
+    cursor: not-allowed;
+    box-shadow: none;
+    border-color: #dadce0;
+}
+
+.button-primary {
+    background-color: var(--accent-light);
+    color: white;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1);
+}
+
+.button-primary:hover:not(:disabled) {
+    background-color: var(--accent-hover-light);
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.15);
+}
+
+.button-secondary {
+    background-color: var(--surface-light);
+    color: var(--accent-light);
+    border: 1px solid var(--border-light);
+}
+
+.button-secondary:hover:not(:disabled) {
+    background-color: rgba(26, 115, 232, 0.05);
+}
+
+/* --- UI COMPONENTS --- */
+.key-display-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+#masked-key { font-family: monospace; font-size: 16px; }
+#edit-key-button { width: auto; padding: 5px 15px; font-size: 12px; }
+
+.progress-indicator {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    height: 6px;
+    margin-top: 8px;
+}
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: var(--accent-light);
+    transition: width 0.3s ease;
+}
+#progress-percentage { text-align: right; font-size: 12px; font-weight: 500; margin-top: 4px; color: var(--text-light-secondary); }
+#status-text { min-height: 20px; font-weight: 500; }
+#status-detail-text { font-size: 12px; min-height: 16px; color: var(--text-light-secondary); }
+
+.info-box {
+    font-size: 12px;
+    color: var(--text-light-secondary);
+    margin-top: 8px;
+    background-color: #f1f3f4;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border-light);
+}
+
+.radio-group { margin-top: 10px; display: flex; align-items: center; gap: 20px; }
+.radio-group input[type="radio"] { margin: 0; width: auto; }
+.radio-group label { margin: 0; font-weight: 400; color: var(--text-light-secondary); }
+
+/* **** YENİ EKLENEN STİL KURALLARI **** */
+.help-text {
+    font-size: 12px;
+    margin: 4px 0 12px 0;
+    text-align: left;
+}
+
+.help-text a {
+    color: var(--accent-light);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.help-text a:hover {
+    text-decoration: underline;
+}
+/* ************************************* */
+
+
+/* --- DARK THEME OVERRIDES --- */
+body.dark-mode {
+    background-color: var(--background-dark);
+    color: var(--text-dark-primary);
+}
+body.dark-mode header, body.dark-mode h2 {
+    border-bottom-color: var(--border-dark);
+    color: var(--text-dark-primary);
+}
+body.dark-mode p, body.dark-mode label, body.dark-mode #progress-percentage, body.dark-mode .radio-group label, body.dark-mode #status-detail-text {
+    color: var(--text-dark-secondary);
+}
+body.dark-mode label { color: var(--text-dark-primary); }
+body.dark-mode input[type="password"], body.dark-mode select {
+    background-color: var(--surface-dark);
+    color: var(--text-dark-primary);
+    border-color: var(--border-dark);
+}
+body.dark-mode input[type="password"]:focus, body.dark-mode select:focus {
+    border-color: var(--accent-dark);
+    box-shadow: 0 0 0 2px rgba(138, 180, 248, 0.2);
+}
+body.dark-mode .button:disabled {
+    background-color: #3c4043;
+    color: #9aa0a6;
+    border-color: #5f6368;
+}
+body.dark-mode .button-primary {
+    background-color: var(--accent-dark);
+    color: #202124;
+    box-shadow: none;
+}
+body.dark-mode .button-primary:hover:not(:disabled) {
+    background-color: var(--accent-hover-dark);
+}
+body.dark-mode .button-secondary {
+    background-color: var(--surface-dark);
+    color: var(--accent-dark);
+    border: 1px solid var(--border-dark);
+}
+body.dark-mode .button-secondary:hover:not(:disabled) {
+    background-color: rgba(138, 180, 248, 0.1);
+}
+body.dark-mode .progress-indicator { background-color: #3c4043; }
+body.dark-mode .progress-bar { background-color: var(--accent-dark); }
+body.dark-mode .info-box {
+    color: var(--text-dark-secondary);
+    background-color: #2d2e30;
+    border-color: var(--border-dark);
+}
+/* **** YENİ EKLENEN KOYU TEMA KURALI **** */
+body.dark-mode .help-text a {
+    color: var(--accent-dark);
+}
+/* ************************************* */

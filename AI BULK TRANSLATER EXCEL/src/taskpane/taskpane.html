@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Translator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+    <link rel="stylesheet" href="taskpane.css">
+    <script type="text/javascript" src="taskpane.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI Translator</h1>
+        </header>
+        <main>
+            <section id="key-management-section">
+                <h2>API Key</h2>
+                <div id="key-display-section" style="display: none;">
+                    <p>API Key has been saved.</p>
+                    <div class="key-display-box">
+                        <span id="masked-key"></span>
+                        <button id="edit-key-button" class="button button-secondary">Edit</button>
+                    </div>
+                </div>
+                <div id="key-input-section">
+                    <p>Enter your Google AI API key to start.</p>
+                    <p class="help-text">
+                        <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener noreferrer">Get your API key from Google AI Studio</a>
+                    </p>
+                    <input type="password" id="api-key-input" placeholder="Paste your API key here">
+                    <button id="save-key-button" class="button button-primary">Save Key</button>
+                </div>
+            </section>
+            
+            <section id="translation-section" style="display: none;">
+                <h2>Settings</h2>
+                <label for="model-selection-select">AI Model</label>
+                <select id="model-selection-select"></select>
+                <p id="model-recommendation" class="info-box"></p>
+
+                <label for="target-language-select">Target Language</label>
+                <select id="target-language-select">
+                    <option value="Turkish">Turkish</option>
+                    <option value="English">English</option>
+                    <option value="German">German</option>
+                    <option value="Spanish">Spanish</option>
+                    <option value="French">French</option>
+                    <option value="Italian">Italian</option>
+                    <option value="Japanese">Japanese</option>
+                    <option value="Russian">Russian</option>
+                    <option value="Chinese">Chinese</option>
+                    <option value="Arabic">Arabic</option>
+                </select>
+
+                <label>Translation Mode</label>
+                <div class="radio-group">
+                    <input type="radio" id="mode-replace" name="translation-mode" value="replace" checked>
+                    <label for="mode-replace">Replace in Place</label>
+                    <input type="radio" id="mode-new-sheet" name="translation-mode" value="newSheet">
+                    <label for="mode-new-sheet">Translate to New Sheet</label>
+                </div>
+
+                <h2>Actions</h2>
+                <button id="translate-selection-button" class="button button-secondary">Translate Selection</button>
+                <button id="translate-workbook-button" class="button button-primary">Translate All Sheets</button>
+                <button id="translate-sheet-name-button" class="button button-secondary">Translate Active Sheet Name</button>
+            </section>
+
+            <section class="progress-section">
+                <h2>Status</h2>
+                <div id="status-text">Please save your API key to begin.</div>
+                <div id="status-detail-text"></div>
+                <div class="progress-indicator" id="progress-indicator" style="display: none;">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+                <div id="progress-percentage"></div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
