@@ -6,13 +6,14 @@
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="AI Bulk Translator"/>
   <Description DefaultValue="Translates entire workbooks or selected ranges using Google Gemini or LM Studio APIs."/>
-  <IconUrl DefaultValue="https://localhost:3000/assets/icon-64.png"/>
-  <HighResolutionIconUrl DefaultValue="https://localhost:3000/assets/icon-128.png"/>
+  <IconUrl DefaultValue="https://iwallplace.github.io/AI-studio-translater/assets/icon-64.png"/>
+  <HighResolutionIconUrl DefaultValue="https://iwallplace.github.io/AI-studio-translater/assets/icon-128.png"/>
   <SupportUrl DefaultValue="https://www.yourwebsite.com/help"/>
   <AppDomains>
     <AppDomain>https://generativelanguage.googleapis.com</AppDomain>
     <AppDomain>http://localhost</AppDomain>
     <AppDomain>https://localhost</AppDomain>
+    <AppDomain>https://iwallplace.github.io/AI-studio-translater/</AppDomain>
   </AppDomains>
   <Hosts>
     <Host Name="Workbook"/>
@@ -23,7 +24,7 @@
     </Sets>
   </Requirements>
   <DefaultSettings>
-    <SourceLocation DefaultValue="https://localhost:3000/taskpane.html"/>
+    <SourceLocation DefaultValue="https://iwallplace.github.io/AI-studio-translater/taskpane.html"/>
   </DefaultSettings>
   <Permissions>ReadWriteDocument</Permissions>
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -69,14 +70,14 @@
     </Hosts>
     <Resources>
       <bt:Images>
-        <bt:Image id="Icon.16x16" DefaultValue="https://localhost:3000/assets/icon-16.png"/>
-        <bt:Image id="Icon.32x32" DefaultValue="https://localhost:3000/assets/icon-32.png"/>
-        <bt:Image id="Icon.80x80" DefaultValue="https://localhost:3000/assets/icon-80.png"/>
+        <bt:Image id="Icon.16x16" DefaultValue="https://iwallplace.github.io/AI-studio-translater/assets/icon-16.png"/>
+        <bt:Image id="Icon.32x32" DefaultValue="https://iwallplace.github.io/AI-studio-translater/assets/icon-32.png"/>
+        <bt:Image id="Icon.80x80" DefaultValue="https://iwallplace.github.io/AI-studio-translater/assets/icon-80.png"/>
       </bt:Images>
       <bt:Urls>
         <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://www.yourwebsite.com/help"/>
-        <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html"/>
-        <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
+        <bt:Url id="Commands.Url" DefaultValue="https://iwallplace.github.io/AI-studio-translater/commands.html"/>
+        <bt:Url id="Taskpane.Url" DefaultValue="https://iwallplace.github.io/AI-studio-translater/taskpane.html"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="GetStarted.Title" DefaultValue="AI Translator is ready!"/>
